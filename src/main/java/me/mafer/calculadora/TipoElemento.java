@@ -6,7 +6,7 @@ package me.mafer.calculadora;
 
 /**
  *
- * @author fefe
+ * @author Maria Fernanda Zandona Casagrande
  */
 public enum TipoElemento {
     OPERANDO, OPERADOR, CALCULAR, RESET, DELETE

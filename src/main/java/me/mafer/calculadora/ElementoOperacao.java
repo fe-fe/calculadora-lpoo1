@@ -6,7 +6,7 @@ package me.mafer.calculadora;
 
 /**
  *
- * @author fefe
+ * @author Maria Fernanda Zandona Casagrande
  */
 public class ElementoOperacao {
     private String elemento;

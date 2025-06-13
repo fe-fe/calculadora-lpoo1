@@ -8,25 +8,19 @@ import me.mafer.calculadora.TipoElemento;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JLabel;
-import me.mafer.calculadora.ElementoOperacao;
 import me.mafer.calculadora.Calculadora;
-
 import java.awt.Color;
-
 import java.awt.Graphics;
 import java.awt.Graphics2D; // Import Graphics2D
-
 import java.awt.RenderingHints; // Import RenderingHints
 import java.awt.Shape; // Import Shape
 import java.awt.geom.RoundRectangle2D; // Import RoundRectangle2D
-
-
 import javax.swing.border.EmptyBorder;
+
 /**
  *
- * @author fefe
+ * @author Maria Fernanda Zandona Casagrande
  */
 public class BotaoCalculadora extends JButton {
     

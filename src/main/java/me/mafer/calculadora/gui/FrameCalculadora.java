@@ -10,7 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 /**
  *
- * @author fefe
+ * @author Maria Fernanda Zandona Casagrande
  */
 public class FrameCalculadora extends javax.swing.JFrame {
     

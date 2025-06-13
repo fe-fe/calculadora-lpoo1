@@ -11,7 +11,7 @@ import static me.mafer.calculadora.TipoElemento.OPERANDO;
 
 /**
  *
- * @author fefe
+ * @author Maria Fernanda Zandona Casagrande
  */
 public class Calculadora {
     private static final int maxPrioridade = 2;
