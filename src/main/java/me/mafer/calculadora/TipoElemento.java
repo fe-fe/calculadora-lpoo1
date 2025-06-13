@@ -8,6 +8,6 @@ package me.mafer.calculadora;
  *
  * @author fefe
  */
-public enum TipoOperacao {
-    OPERANDO, OPERADOR, CALCULAR, RESET
+public enum TipoElemento {
+    OPERANDO, OPERADOR, CALCULAR, RESET, DELETE
 }

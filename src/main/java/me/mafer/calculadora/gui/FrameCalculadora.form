@@ -38,7 +38,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Component id="PainelExibicao" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace pref="8" max="32767" attributes="0"/>
               <Component id="painelBotoes" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -81,7 +81,7 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
         <Property name="columns" type="int" value="4"/>
         <Property name="horizontalGap" type="int" value="4"/>
-        <Property name="rows" type="int" value="4"/>
+        <Property name="rows" type="int" value="5"/>
         <Property name="verticalGap" type="int" value="4"/>
       </Layout>
     </Container>

@@ -4,7 +4,7 @@
  */
 package me.mafer.calculadora.gui;
 
-import me.mafer.calculadora.TipoOperacao;
+import me.mafer.calculadora.TipoElemento;
 import java.awt.Color;
 import javax.swing.border.EmptyBorder;
 
@@ -35,37 +35,41 @@ public class FrameCalculadora extends javax.swing.JFrame {
         
         BotaoCalculadora.labelExibicao = labelExibicao;
         
-        BotaoCalculadora botaoSETE = new BotaoCalculadora("7", TipoOperacao.OPERANDO, 0);
-        BotaoCalculadora botaoOITO = new BotaoCalculadora("8", TipoOperacao.OPERANDO, 0);
-        BotaoCalculadora botaoNOVE = new BotaoCalculadora("9", TipoOperacao.OPERANDO, 0);
-        BotaoCalculadora botaoMAIS = new BotaoCalculadora("+", TipoOperacao.OPERADOR, 1);
-        BotaoCalculadora botaoQUATRO = new BotaoCalculadora("4", TipoOperacao.OPERANDO, 0);
-        BotaoCalculadora botaoCINCO = new BotaoCalculadora("5", TipoOperacao.OPERANDO, 0);
-        BotaoCalculadora botaoSEIS = new BotaoCalculadora("6", TipoOperacao.OPERANDO, 0);
-        BotaoCalculadora botaoMENOS = new BotaoCalculadora("-", TipoOperacao.OPERADOR, 1);
-        BotaoCalculadora botaoUM = new BotaoCalculadora("1", TipoOperacao.OPERANDO, 0);
-        BotaoCalculadora botaoDOIS = new BotaoCalculadora("2", TipoOperacao.OPERANDO, 0);
-        BotaoCalculadora botaoTRES = new BotaoCalculadora("3", TipoOperacao.OPERANDO, 0);
-        BotaoCalculadora botaoVEZES = new BotaoCalculadora("x", TipoOperacao.OPERADOR, 2);
-        BotaoCalculadora botaoZERO = new BotaoCalculadora("0", TipoOperacao.OPERANDO, 0);
-        BotaoCalculadora botaoIGUAL = new BotaoCalculadora("=", TipoOperacao.CALCULAR, 0);
-        BotaoCalculadora botaoRESET = new BotaoCalculadora("C", TipoOperacao.RESET, 0);
-        BotaoCalculadora botaoDIVIDIR = new BotaoCalculadora("/", TipoOperacao.OPERADOR, 2);
+        BotaoCalculadora botaoSETE = new BotaoCalculadora("7", TipoElemento.OPERANDO, 0);
+        BotaoCalculadora botaoOITO = new BotaoCalculadora("8", TipoElemento.OPERANDO, 0);
+        BotaoCalculadora botaoNOVE = new BotaoCalculadora("9", TipoElemento.OPERANDO, 0);
+        BotaoCalculadora botaoMAIS = new BotaoCalculadora("+", TipoElemento.OPERADOR, 1);
+        BotaoCalculadora botaoQUATRO = new BotaoCalculadora("4", TipoElemento.OPERANDO, 0);
+        BotaoCalculadora botaoCINCO = new BotaoCalculadora("5", TipoElemento.OPERANDO, 0);
+        BotaoCalculadora botaoSEIS = new BotaoCalculadora("6", TipoElemento.OPERANDO, 0);
+        BotaoCalculadora botaoMENOS = new BotaoCalculadora("-", TipoElemento.OPERADOR, 1);
+        BotaoCalculadora botaoUM = new BotaoCalculadora("1", TipoElemento.OPERANDO, 0);
+        BotaoCalculadora botaoDOIS = new BotaoCalculadora("2", TipoElemento.OPERANDO, 0);
+        BotaoCalculadora botaoTRES = new BotaoCalculadora("3", TipoElemento.OPERANDO, 0);
+        BotaoCalculadora botaoVEZES = new BotaoCalculadora("x", TipoElemento.OPERADOR, 2);
+        BotaoCalculadora botaoZERO = new BotaoCalculadora("0", TipoElemento.OPERANDO, 0);
+        BotaoCalculadora botaoIGUAL = new BotaoCalculadora("=", TipoElemento.CALCULAR, 0);
+        BotaoCalculadora botaoRESET = new BotaoCalculadora("C", TipoElemento.RESET, 0);
+        BotaoCalculadora botaoDIVIDIR = new BotaoCalculadora("/", TipoElemento.OPERADOR, 2);
+        BotaoCalculadora botaoDECIMAL = new BotaoCalculadora(".", TipoElemento.OPERANDO, 0);
+        BotaoCalculadora botaoDELETE = new BotaoCalculadora("⌫", TipoElemento.DELETE, 0);
         painelBotoes.add(botaoSETE);
         painelBotoes.add(botaoOITO);
         painelBotoes.add(botaoNOVE);
-        painelBotoes.add(botaoMAIS);
+        painelBotoes.add(botaoDELETE);
         painelBotoes.add(botaoQUATRO);
         painelBotoes.add(botaoCINCO);
         painelBotoes.add(botaoSEIS);
-        painelBotoes.add(botaoMENOS);
+        painelBotoes.add(botaoIGUAL);
         painelBotoes.add(botaoUM);
         painelBotoes.add(botaoDOIS);
         painelBotoes.add(botaoTRES);
-        painelBotoes.add(botaoVEZES);
-        painelBotoes.add(botaoZERO);
-        painelBotoes.add(botaoIGUAL);
         painelBotoes.add(botaoRESET);
+        painelBotoes.add(botaoZERO);
+        painelBotoes.add(botaoDECIMAL);
+        painelBotoes.add(botaoMAIS);
+        painelBotoes.add(botaoMENOS);
+        painelBotoes.add(botaoVEZES);
         painelBotoes.add(botaoDIVIDIR);
         pack();
     }
@@ -104,7 +108,7 @@ public class FrameCalculadora extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        painelBotoes.setLayout(new java.awt.GridLayout(4, 4, 4, 4));
+        painelBotoes.setLayout(new java.awt.GridLayout(5, 4, 4, 4));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,7 +126,7 @@ public class FrameCalculadora extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(PainelExibicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(painelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

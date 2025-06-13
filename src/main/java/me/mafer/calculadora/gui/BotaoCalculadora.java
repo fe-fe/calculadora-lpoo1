@@ -4,13 +4,13 @@
  */
 package me.mafer.calculadora.gui;
 
-import me.mafer.calculadora.TipoOperacao;
+import me.mafer.calculadora.TipoElemento;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
-import me.mafer.calculadora.AcaoUsuario;
+import me.mafer.calculadora.ElementoOperacao;
 import me.mafer.calculadora.Calculadora;
 
 import java.awt.Color;
@@ -32,31 +32,24 @@ public class BotaoCalculadora extends JButton {
     
     public static JLabel labelExibicao;
     private final String acao;
-    private final TipoOperacao tipoOperacao;
+    private final TipoElemento tipoOperacao;
     private final int prioridade;
     
     private final ActionListener handleClick = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             switch (tipoOperacao) {
-                case OPERANDO:
-                    AcaoUsuario.handleNovoOperando(acao);
-                    break;
-                case OPERADOR:
-                    AcaoUsuario.handleNovoOperador(acao, prioridade);
-                    break;
-                case CALCULAR:
-                    AcaoUsuario.handleCalcular();
-                    break;
-                case RESET:
-                    AcaoUsuario.handleReset();
-                    break;
+                case OPERANDO -> Calculadora.handleNovoOperando(acao);
+                case OPERADOR -> Calculadora.handleNovoOperador(acao, prioridade);
+                case CALCULAR -> Calculadora.handleCalcular();
+                case RESET -> Calculadora.handleReset();
+                case DELETE -> Calculadora.handleDelete();
             }
             labelExibicao.setText(Calculadora.buildCalculoExibido());
         }
     };
     
-    public BotaoCalculadora(String text, TipoOperacao tipoOperacao, int prioridade) {
+    public BotaoCalculadora(String text, TipoElemento tipoOperacao, int prioridade) {
         super(text);
         this.tipoOperacao = tipoOperacao;
         this.acao = text;
@@ -68,7 +61,7 @@ public class BotaoCalculadora extends JButton {
         this.setBorder(new EmptyBorder(15, 15, 15, 15));
         switch (tipoOperacao) {
             case OPERANDO -> this.setBackground(new java.awt.Color(56, 52, 52));
-            case CALCULAR -> this.setBackground(new java.awt.Color(51, 1, 115));
+            case CALCULAR, RESET, DELETE -> this.setBackground(new java.awt.Color(51, 1, 115));
             default -> this.setBackground(new java.awt.Color(40, 36, 36));
         }
         
@@ -80,7 +73,7 @@ public class BotaoCalculadora extends JButton {
         
         switch (tipoOperacao) {
             case OPERANDO -> hoverBg = new Color(70, 65, 65);
-            case CALCULAR -> hoverBg = new Color(56, 0, 129);
+            case CALCULAR, RESET, DELETE -> hoverBg = new Color(56, 0, 129);
             default -> hoverBg = new Color(50, 45, 45);
         }
         this.addMouseListener(new java.awt.event.MouseAdapter() {
